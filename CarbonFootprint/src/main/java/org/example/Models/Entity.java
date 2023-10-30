@@ -49,11 +49,9 @@ public class Entity {
     public void setMailWithoutAttachment(double mailWithoutAttachment) {
         this.mailWithoutAttachment = mailWithoutAttachment;
     }
-
     public double getSpam() {
         return spam;
     }
-
     public void setSpam(double spam) {
         this.spam = spam;
     }

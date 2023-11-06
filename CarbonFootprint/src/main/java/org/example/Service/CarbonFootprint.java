@@ -6,16 +6,16 @@ import static org.example.Constants.CarbonFootprintConstants.*;
 public class CarbonFootprint {
     public static double getCarbonFootprint(Entity entity) {
             String emailId = entity.getEmail();
-            String source = entity.getSource();
-            double mailWithAttachment = entity.getMailWithAttachment();
-            double mailWithoutAttachment = entity.getMailWithoutAttachment();
-            double spam = entity.getSpam();
-            double emailSize = (mailWithAttachment * MAILWITHATTACHMENT_CARBON_EQUIVALENT ) + (mailWithoutAttachment * MAILWITHOUTATTACHMENT_CARBON_EQUIVALENT) + (spam * SPAM_CARBON_EQUIVALENT );
-            double carbonFootprint = emailSize * getCarbonIntensity(source);
-            return carbonFootprint;
+            String serviceProvider = entity.getServiceProvider();
+            double inboxCount = entity.getInboxCount();
+            double sentCount = entity.getSentCount();
+            double spamCount = entity.getSpamCount();
+            double totalCarbonEquivalent = (inboxCount * INBOX_EMAIL_CARBON_EQUIVALENT) + (sentCount * SENT_EMAIL_CARBON_EQUIVALENT) + (spamCount * SPAM_EMAIL_CARBON_EQUIVALENT);
+            double totalCarbonFootprint = totalCarbonEquivalent * getCarbonIntensity(serviceProvider);
+            return totalCarbonFootprint;
     }
-    private static double getCarbonIntensity(String source) {
-        switch (source) {
+    private static double getCarbonIntensity(String serviceProvider) {
+        switch (serviceProvider) {
             case "gmail":
                 return GMAIL_CARBON_INTENSITY;
             case "outlook":

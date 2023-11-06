@@ -2,20 +2,20 @@ package org.example.Models;
 
 public class Entity {
     private String email;
-    private String source;
-    private double mailWithAttachment;
-    private double mailWithoutAttachment;
-    private double spam;
+    private String serviceProvider;
+    private int inboxCount;
+    private int sentCount;
+    private int spamCount;
 
     public Entity() {
     }
 
-    public Entity(String email, String source, double mailWithAttachment, double mailWithoutAttachment, double spam) {
+    public Entity(String email, String serviceProvider, int inboxCount, int sentCount, int spamCount) {
         this.email = email;
-        this.source = source;
-        this.mailWithAttachment = mailWithAttachment;
-        this.mailWithoutAttachment = mailWithoutAttachment;
-        this.spam = spam;
+        this.serviceProvider = serviceProvider;
+        this.inboxCount = inboxCount;
+        this.sentCount = sentCount;
+        this.spamCount = spamCount;
     }
 
     public String getEmail() {
@@ -26,33 +26,35 @@ public class Entity {
         this.email = email;
     }
 
-    public String getSource() {
-        return source;
+    public String getServiceProvider() {
+        return serviceProvider;
     }
 
-    public void setSource(String source) {
-        this.source = source;
+    public void setServiceProvider(String serviceProvider) {
+        this.serviceProvider = serviceProvider;
     }
 
-    public double getMailWithAttachment() {
-        return mailWithAttachment;
+    public int getInboxCount() {
+        return inboxCount;
     }
 
-    public void setMailWithAttachment(double mailWithAttachment) {
-        this.mailWithAttachment = mailWithAttachment;
+    public void setInboxCount(int inboxCount) {
+        this.inboxCount = inboxCount;
     }
 
-    public double getMailWithoutAttachment() {
-        return mailWithoutAttachment;
+    public int getSentCount() {
+        return sentCount;
     }
 
-    public void setMailWithoutAttachment(double mailWithoutAttachment) {
-        this.mailWithoutAttachment = mailWithoutAttachment;
+    public void setSentCount(int sentCount) {
+        this.sentCount = sentCount;
     }
-    public double getSpam() {
-        return spam;
+
+    public int getSpamCount() {
+        return spamCount;
     }
-    public void setSpam(double spam) {
-        this.spam = spam;
+
+    public void setSpamCount(int spamCount) {
+        this.spamCount = spamCount;
     }
 }

@@ -1,13 +1,13 @@
 package org.example.Models;
 
-public class Email {
+public class EmailData {
     private int inboxCount;
     private int sentCount;
     private int spamCount;
-    public Email() {
+    public EmailData() {
     }
 
-    public Email(int inboxCount, int sentCount, int spamCount) {
+    public EmailData(int inboxCount, int sentCount, int spamCount) {
         this.inboxCount = inboxCount;
         this.sentCount = sentCount;
         this.spamCount = spamCount;

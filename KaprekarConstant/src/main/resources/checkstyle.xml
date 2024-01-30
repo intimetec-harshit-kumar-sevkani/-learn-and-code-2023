@@ -6,19 +6,17 @@
     <property name="severity" value="error"/>
 
     <module name="SeverityMatchFilter">
-        <!-- report all violations except ignore -->
+
         <property name="severity" value="ignore"/>
         <property name="acceptOnMatch" value="false"/>
     </module>
 
-    <!-- Maximum line length -->
     <module name="LineLength">
         <property name="max" value="120"/>
         <property name="ignorePattern" value="^package\s.+\..+;$"/>
         <property name="ignorePattern" value="^import\s.+\..+;$"/>
     </module>
 
-    <!-- No whitespace before -->
     <module name="RegexpSingleline">
         <property name="format" value="\s+$"/>
         <property name="message" value="Remove trailing whitespace"/>
@@ -29,7 +27,6 @@
         <property name="max" value="500"/>
     </module>
 
-    <!-- File Tab Character -->
     <module name="FileTabCharacter">
         <property name="eachLine" value="true"/>
     </module>
@@ -41,7 +38,6 @@
             <property name="severity" value="error"/>
         </module>
 
-        <!-- Tabs and Indentation -->
         <module name="Indentation">
             <property name="basicOffset" value="4"/>
             <property name="braceAdjustment" value="0"/>
@@ -59,6 +55,11 @@
             <property name="processJavadoc" value="false"/>
         </module>
 
+        <module name="ParameterNumber">
+            <property name="max" value="10"/>
+            <property name="tokens" value="METHOD_DEF"/>
+        </module>
+
         <module name="MethodName">
             <property name="format" value="^[a-z](_?[a-zA-Z0-9]+)*$"/>
             <property name="applyToPublic" value="false"/>
@@ -67,9 +68,18 @@
 
         <module name="AvoidStarImport"/>
 
+        <module name="IllegalImport"/>
+
+        <module name="NoLineWrap"/>
+
+        <module name="NoWhitespaceAfter"/>
+
+        <module name="UnusedImports"/>
+
+        <module name="NoWhitespaceBefore"/>
+
         <module name="RedundantImport"/>
 
-        <!-- Javadoc Comments -->
         <module name="JavadocStyle"/>
 
         <module name="ConstantName">
@@ -77,7 +87,6 @@
                       value="^log(ger)?$|^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$"/>
         </module>
 
-        <!-- Empty Blocks -->
         <module name="EmptyBlock">
             <property name="option" value="text"/>
             <property name="tokens" value="LITERAL_TRY"/>
